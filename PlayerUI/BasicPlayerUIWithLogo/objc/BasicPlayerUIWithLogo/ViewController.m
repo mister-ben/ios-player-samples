@@ -67,10 +67,10 @@ static NSString *logoSource = @"https://solutions.brightcove.com/bclifford/img/b
     BCOVPUIPlayerView *playerView = [[BCOVPUIPlayerView alloc] initWithPlaybackController:self.playbackController options:options];
     playerView.delegate = self;
     self.playerView = playerView;
-    
+
+    // Attach image overlay to fading controls, which is shown with controls 
     UIImage *logo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:logoSource]]];
     UIImageView *logoView = [[UIImageView alloc] initWithImage:logo];
-    
     [self.playerView.controlsFadingView addSubview:logoView];
     
     [self.videoContainer addSubview:self.playerView];
